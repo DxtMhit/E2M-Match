@@ -1,0 +1,99 @@
+:root {
+  /* === E2M Brand Colors === */
+  --color-primary-black: #FFFFFF;
+  --color-dark-navy: #F5F5F7;
+  --color-dark-surface: #FFFFFF;
+  --color-accent-blue: #1638FB;
+  --color-accent-blue-hover: #0726D9;
+  --color-accent-blue-light: rgba(22, 56, 251, 0.06);
+  --color-accent-orange: #F35700;
+  --color-accent-orange-light: rgba(243, 87, 0, 0.08);
+  --color-white: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-surface-light: #F9F9FB;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-light: rgba(0, 0, 0, 0.12);
+  --color-true-white: #FFFFFF;
+  --color-true-black: #000000;
+
+  /* Status Colors */
+  --color-success: #22C55E;
+  --color-success-bg: rgba(34, 197, 94, 0.12);
+  --color-error: #EF4444;
+  --color-error-bg: rgba(239, 68, 68, 0.12);
+  --color-warning: #F97316;
+  --color-warning-bg: rgba(249, 115, 22, 0.12);
+
+  /* Verdict Colors */
+  --color-strong-fit: #22C55E;
+  --color-good-fit: #4ADE80;
+  --color-moderate-fit: #E8712B;
+  --color-weak-fit: #F97316;
+  --color-not-fit: #EF4444;
+
+  /* === Typography === */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-hero: 4.5rem;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* === Spacing === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* === Layout === */
+  --max-width: 1280px;
+  --navbar-height: 72px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  /* === Shadows === */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-glow-blue: 0 0 35px rgba(22, 56, 251, 0.25);
+  --shadow-glow-orange: 0 0 35px rgba(243, 87, 0, 0.25);
+
+  /* === Transitions === */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
