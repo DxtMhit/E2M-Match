@@ -160,7 +160,7 @@ class GeminiComparisonResult(BaseModel):
     verdict: str = Field(..., description="One of: Strong Fit, Good Fit, Moderate Fit, Weak Fit, Not a Fit")
     matched_skills: list[GeminiMatchedSkill] = Field(default_factory=list)
     missing_skills: list[GeminiMissingSkill] = Field(default_factory=list)
-    explanation: str = Field(..., description="A detailed narrative explanation of the match result")
+    explanation: str = Field(..., description="Exactly 3 to 4 concise bullet points summarizing the match results (strengths, gaps, fit suitability). Format each point on a new line starting with a bullet '• '.")
     suggestions: list[str] = Field(default_factory=list, description="Actionable suggestions for candidate improvement")
     candidate_name: Optional[str] = Field(default=None, description="Extracted candidate name or null")
     job_title_matched: Optional[str] = Field(default=None, description="Job title matched or target job title from JD")
@@ -211,6 +211,7 @@ SCORING GUIDELINES:
 IMPORTANT RULES:
 - Set match_type to "exact" when the skill name closely matches, "semantic" when the candidate has an equivalent/related skill
 - Set importance to "must-have" for core/essential requirements, "nice-to-have" for preferred/bonus skills
+- For 'explanation', provide EXACTLY 3 to 4 concise bullet points summarizing the match result (such as overall fit, strengths, major gaps). Format each point on a new line starting with a bullet '• '. Do not write a continuous narrative paragraph.
 """
 
     response_text = _call_gemini(prompt, response_schema=GeminiComparisonResult)

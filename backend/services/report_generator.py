@@ -204,13 +204,14 @@ def generate_report_pdf(result: AnalysisResult) -> bytes:
     # --- Score Section ---
     verdict_color = _get_verdict_color(result.verdict)
     elements.append(Paragraph(f"{result.score}", styles["score"]))
+    elements.append(Spacer(1, 10))  # Add space between score and verdict
 
     verdict_style = ParagraphStyle(
         "VerdictDynamic",
         parent=styles["verdict"],
         textColor=verdict_color,
     )
-    elements.append(Paragraph(f"/ 100 — {result.verdict.value}", verdict_style))
+    elements.append(Paragraph(f"{result.verdict.value}", verdict_style))
 
     elements.append(HRFlowable(width="60%", thickness=1, color=E2M_LIGHT_BG, spaceAfter=15, spaceBefore=10))
 
@@ -244,7 +245,20 @@ def generate_report_pdf(result: AnalysisResult) -> bytes:
     # --- Explanation ---
     elements.append(Paragraph("Analysis Summary", styles["heading"]))
     elements.append(HRFlowable(width="100%", thickness=1, color=E2M_BLUE, spaceAfter=10))
-    elements.append(Paragraph(result.explanation, styles["body"]))
+    
+    # Split explanation by newline to render as list elements
+    lines = [line.strip() for line in result.explanation.split('\n') if line.strip()]
+    for line in lines:
+        cleaned_line = line.lstrip('•-* \t')
+        if cleaned_line:
+            bullet_style = ParagraphStyle(
+                "ExplanationBullet",
+                parent=styles["body"],
+                leftIndent=15,
+                firstLineIndent=-10,
+                spaceAfter=4,
+            )
+            elements.append(Paragraph(f"• &nbsp; {cleaned_line}", bullet_style))
     elements.append(Spacer(1, 10))
 
     # --- Matched Skills ---
