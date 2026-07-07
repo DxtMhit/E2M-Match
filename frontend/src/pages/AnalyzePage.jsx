@@ -271,7 +271,24 @@ function AnalyzePage() {
                 <span className="results__section-icon">📝</span>
                 Analysis Summary
               </h3>
-              <p className="results__explanation">{result.explanation}</p>
+              <div className="results__explanation-list">
+                {result.explanation ? (
+                  result.explanation.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0)
+                    .map((line, idx) => {
+                      const cleaned = line.replace(/^[•\-\*\s]+/, '');
+                      return (
+                        <div key={idx} className="results__explanation-item">
+                          <span className="results__explanation-bullet">•</span>
+                          <span className="results__explanation-text">{cleaned}</span>
+                        </div>
+                      );
+                    })
+                ) : (
+                  <p className="results__empty">No explanation available.</p>
+                )}
+              </div>
             </div>
 
             {/* Skills Breakdown */}

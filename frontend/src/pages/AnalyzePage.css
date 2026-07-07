@@ -313,6 +313,31 @@
   white-space: pre-wrap;
 }
 
+.results__explanation-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.results__explanation-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+.results__explanation-bullet {
+  color: var(--color-blue);
+  font-weight: bold;
+  margin-right: var(--space-2);
+  user-select: none;
+}
+
+.results__explanation-text {
+  flex: 1;
+}
+
 /* Skills Grid */
 .results__skills-grid {
   display: grid;
